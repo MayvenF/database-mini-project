@@ -1,12 +1,3 @@
-DROP TABLE IF EXISTS `reader`;
-
-CREATE TABLE `reader` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `libraryCard` mediumint default NULL,
-  `readerName` varchar(255) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
 INSERT INTO `reader` (`libraryCard`,`readerName`)
 VALUES
   (636493417,"Valentine Page"),
