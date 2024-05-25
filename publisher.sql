@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `publisher`;
 
 CREATE TABLE `publisher` (
   `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `PublisherD` mediumint default NULL,
+  `PublisherID` mediumint default NULL,
   `PublisherName` TEXT default NULL,
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=1;
