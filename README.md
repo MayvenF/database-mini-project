@@ -13,7 +13,7 @@ SQL Schema:
 
 SQL Data Generation:
 * author.sql (approximately 300 rows)
-* book.sql (approximately 200,000)
+* book.sql (approximately 200,000 rows)
 * publisher.sql (approximately 500 rows)
 * reader.sql (approximately 500 rows)
 * reservation.sql (approximately 30 rows)
