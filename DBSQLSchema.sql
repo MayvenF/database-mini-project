@@ -1,7 +1,9 @@
 -- Creating the Author table
 CREATE TABLE Author (
     AuthorID INT PRIMARY KEY,
-    AuthorName VARCHAR(255) NOT NULL
+    AuthorName VARCHAR(255) NOT NULL,
+    Rating INT,
+    NumBooksPublished INT
 );
 
 -- Creating the Publisher table
@@ -30,24 +32,15 @@ CREATE TABLE Reader (
 
 -- Creating the Book table
 CREATE TABLE Book (
-    ID INT PRIMARY KEY,
+    BookID INT PRIMARY KEY,
     Title VARCHAR(255) NOT NULL,
     Genre VARCHAR(255) NOT NULL,
-    Condition VARCHAR(255) NOT NULL,
-    PublishedDate DATE,
-    AuthorID INT,
-    PublisherID INT,
-    SupplierID INT,
-    ShelfID INT,
-    FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID),
-    FOREIGN KEY (PublisherID) REFERENCES Publisher(PublisherID),
-    FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID),
-    FOREIGN KEY (ShelfID) REFERENCES Shelf(ShelfID)
+    Condition VARCHAR(255) NOT NULL
 );
 
 -- Creating the Reservation table
 CREATE TABLE Reservation (
-    TransactionID INT PRIMARY KEY,
+    ReservationID INT PRIMARY KEY,
     LoanDate DATE NOT NULL,
     ReturnDate DATE,
     LibraryCard INT,
