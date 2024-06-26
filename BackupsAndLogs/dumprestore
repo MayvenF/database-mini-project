@@ -1,1 +1,12 @@
+Dump Script (plaintext):
+pg_dump -U postgres -d Book_Database -v -f "C:\Users\maeve\Documents\School\Year 3\Semester 2\Databases\Dumps and Backups\backupSQL.sql"
 
+Dump Script (custom):
+pg_dump -U postgres -d Book_Database -Fc -v -f "C:\Users\maeve\Documents\School\Year 3\Semester 2\Databases\Dumps and Backups\backupPSQL.sql"
+
+Restore Script (plaintext):
+psql -U postgres -d book_database -f "C:\Users\maeve\Documents\School\Year 3\Semester 2\Databases\Dumps and Backups\backupSQL.sql"
+
+Restore Script (custom):
+pg_restore -U postgres -d book_database "C:\Users\maeve\Documents\School\Year 3\Semes
+ter 2\Databases\Dumps and Backups\backupPSQL.sql"
