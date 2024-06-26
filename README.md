@@ -12,10 +12,14 @@ SQL Schema:
 **DBSQLSchema.sql**
 
 SQL Data Generation:
-* author.sql (approximately 300 rows)
+* author.sql (approximately 1000 rows)
 * book.sql (approximately 200,000 rows)
+* location.sql (approximately 200,000 rows)
+* publishedby.sql (approximately 200,000 rows)
 * publisher.sql (approximately 500 rows)
 * reader.sql (approximately 500 rows)
-* reservation.sql (approximately 30 rows)
-* shelf.sql (approximately 420 rows)
+* reservation.sql (approximately 500 rows)
+* shelf.sql (approximately 5000 rows)
+* suppliedby.sql (approximately 200,000 rows)
 * supplier.sql (approximately 500 rows)
+* writtenby.sql (approximately 200,000 rows)
