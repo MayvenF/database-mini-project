@@ -68,3 +68,9 @@ CREATE TABLE public.writtenby (
     authorid integer
 );
 
+--Creating the Location table
+CREATE TABLE public.location(
+    bookid integer NOT NULL,
+    shelfid integer
+);
+
