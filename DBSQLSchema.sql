@@ -49,3 +49,22 @@ CREATE TABLE Reservation (
     FOREIGN KEY (BookID) REFERENCES Book(ID)
 );
 
+-- Creating the PublishedBy table
+CREATE TABLE public.publishedby (
+    bookid integer NOT NULL,
+    publisherid integer,
+    publisheddate date
+);
+
+-- Creating the SuppliedBy table
+CREATE TABLE public.suppliedby (
+    bookid integer NOT NULL,
+    supplierid integer
+);
+
+-- Creating the WrittenBy table
+CREATE TABLE public.writtenby (
+    bookid integer NOT NULL,
+    authorid integer
+);
+
