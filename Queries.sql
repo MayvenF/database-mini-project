@@ -74,17 +74,13 @@ WHERE genre = 'Mystery' AND condition = 'Bad';
 -- Time: 339 msec
 
 
+-- Update return date for all books due today to 2 weeks later
 
--- Update return date to make a specific user 2 weeks later?
+UPDATE reservation 
+SET returndate = returndate + INTERVAL '14 DAY'
+WHERE returndate =  CURRENT_DATE
 
-UPDATE reservation rs
-SET returndate = rs.returndate + INTERVAL '14 DAY'
-FROM reader rd
-WHERE rs.librarycard = rd.librarycard
-  AND rd.readername = <insert name here>
-
--- Time: 100 msec
-
+-- Time: 54 msec
 
 
 -- Delete reservations whose loan return date passed
