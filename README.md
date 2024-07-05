@@ -69,5 +69,5 @@ Below is a screenshot from this stage
 ![Screenshot 2024-07-05 164527](https://github.com/MayvenF/database-mini-project-3058-6034/assets/117817449/52c9ed8c-99e1-41e3-9f34-b33318ca6084)
 
 We logged the timings of all our queries as comments in the sql files. 
-The error messages are logged in this file: 
+The error messages are logged in this file: [ConstraintsLog](BackupsAndLogs/ConstraintsLog.txt)
 
