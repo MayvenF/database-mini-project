@@ -1,0 +1,115 @@
+INDICES:
+
+	- idx_return_date_book_id
+	- idx_genre
+ 	- idx_readername
+
+
+TIMINGS OF RE-RUN QUERIES:
+
+1. EXECUTE top_readers (5)
+	without index: 219 msec
+	with index: 111 msec
+	time saved: 108 msec
+
+2. EXECUTE list_due_books (7)
+	without index: 1 sec 336 msec
+	with index: 123 msec
+	time saved: 1 sec 213 msec
+
+
+3. EXECUTE find_top_books (6)
+	without index: 349 msec
+	with index: 165 msec
+	time saved: 184 msec
+
+
+4. EXECUTE update_user_returndate (3, 'Stephanie Suarez')
+	without index: 260 msec
+	with index: 138 msec
+	time saved: 122 msec
+
+
+
+
+
+CONSTRAINTS
+
+
+1. unique_supplier_id
+	
+Test Query: 
+	INSERT INTO supplier (suppliername, supplierid)
+	VALUES ('Tiffany Hughes', 304)
+
+Error Message:
+	ERROR:  Key (supplierid)=(304) already exists.duplicate key value violates unique constraint "supplier_pkey" 
+	ERROR:  duplicate key value violates unique constraint "supplier_pkey"
+	Detail: Key (supplierid)=(304) already exists.\
+
+Explanation:
+	Our supplier table has 500 rows, each with an id between 0 and 499. Our check tries to add a new entry with an existing supplierid
+
+
+
+2. check_dates
+
+Test Query:
+	INSERT INTO reservation (reservationid, loandate, returndate)
+	VALUES (100000, '2024-05-01', '2023-01-01')
+
+Error Message:
+	ERROR:  Failing row contains (100000, 2024-05-01, 2023-01-01, null, null).new row for relation "reservation" violates check constraint "check_dates" 
+	ERROR:  new row for relation "reservation" violates check constraint "check_dates"
+	Detail: Failing row contains (100000, 2024-05-01, 2023-01-01, null, null).
+
+Explanation:
+	Our table reservation has a loandate and a returndate. Our check tries to add an entry where the loandate is before the returndate, which makes no sense.
+
+
+
+3. fk_bookid
+
+Test Query:
+	INSERT INTO reservation (reservationid, bookid)
+	VALUES (1000, 4000000)
+
+Error Message:
+	ERROR:  Key (bookid)=(4000000) is not present in table "book".insert or update on table "reservation" violates foreign key constraint "fk_book_id" 
+	ERROR:  insert or update on table "reservation" violates foreign key constraint "fk_book_id"
+	Detail: Key (bookid)=(4000000) is not present in table "book".
+
+Explanation:
+	Our book table has 200,000 books each with an id from 0 to 199,999. This check tries to make an entry with bookid equal to 4,000,000, which doesn't exist in the book table, so an appropriate error will be thrown
+
+
+4. fk_member_id
+
+Test Query:
+	INSERT INTO reservation (reservationid, librarycard)
+	VALUES (3000, 130405999)
+
+Error Message:
+	ERROR:  Key (librarycard)=(130405999) is not present in table "reader".insert or update on table "reservation" violates foreign key constraint "fk_member_id" 
+	ERROR:  insert or update on table "reservation" violates foreign key constraint "fk_member_id"
+	Detail: Key (librarycard)=(130405999) is not present in table "reader".
+
+Explanation:
+	Same as fk_bookid. Librarycard 130405999 doesn't exist in the reader table so an error will be thrown.
+
+
+5. unique_book_shelf
+
+Test Query:
+	INSERT INTO location
+	VALUES (2, 338)
+
+Error Message:
+	ERROR:  Key (bookid)=(2) already exists.duplicate key value violates unique constraint "location_pkey" 
+	ERROR:  duplicate key value violates unique constraint "location_pkey"
+	Detail: Key (bookid)=(2) already exists.
+
+Explanation:
+	We only want bookid to appear once in the location table. If it appeared twice, it would mean that one book was stored on two separate shelves which makes no sense.
+
+
