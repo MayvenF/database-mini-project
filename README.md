@@ -71,10 +71,11 @@ Below is a screenshot from this stage
 We logged the timings of all our queries as comments in the sql files. 
 The error messages are logged in this file: [ConstraintsLog](BackupsAndLogs/ConstraintsLog.txt)
 
-My Table:
+Here are the timing comparisons before and after the indices were run:
 | Timing | Before  | After  |
 | :-----: | :---: | :---: |
-| 1      | 301   | 283   |
-| 1      | 301   | 283   |
-| 1      | 301   | 283   |
+| 1      | 219   | 111   |
+| 2      | 1336   | 123   |
+| 3      | 349   | 165   |
+| 4      | 260   | 138   |
 
