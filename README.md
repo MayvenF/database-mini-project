@@ -71,7 +71,7 @@ Below is a screenshot from this stage
 We logged the timings of all our queries as comments in the sql files. 
 The error messages are logged in this file: [ConstraintsLog](BackupsAndLogs/ConstraintsLog.txt)
 
-Here are the timing comparisons before and after the indices were run:
+Here are the timing comparisons (in msec) before and after the indices were run:
 | Timing | Before  | After  |
 | :-----: | :---: | :---: |
 | 1      | 219   | 111   |
