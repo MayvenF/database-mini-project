@@ -49,7 +49,7 @@ Below are screenshots executing two of the queries in the GUI
 ![Screenshot 2024-07-05 163143](https://github.com/MayvenF/database-mini-project-3058-6034/assets/117817449/9efb099b-d1f8-4242-8c30-b384c73f3ccd)
 
 
-We made 4 parameterized queries that can:
+We made 4 parameterized queries that can:| 1      | 301   | 283   |
 * find the top x most borrowed books
 * extend a book loan for a user indefinitely
 * find the top x readers (who borrowed the most books)
@@ -72,13 +72,9 @@ We logged the timings of all our queries as comments in the sql files.
 The error messages are logged in this file: [ConstraintsLog](BackupsAndLogs/ConstraintsLog.txt)
 
 My Table:
-    | Before | After
---- |   ---  | --- 
-1 | 330 | 110
---- |   ---  | --- 
-2 | 230 | 90
---- |   ---  | --- 
-3 | 455 | 3
---- |   ---  | --- 
-4 | 611 | 300
+| Timing | Before  | After  |
+| :-----: | :---: | :---: |
+| 1      | 301   | 283   |
+| 1      | 301   | 283   |
+| 1      | 301   | 283   |
 
