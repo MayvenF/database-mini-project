@@ -71,3 +71,14 @@ Below is a screenshot from this stage
 We logged the timings of all our queries as comments in the sql files. 
 The error messages are logged in this file: [ConstraintsLog](BackupsAndLogs/ConstraintsLog.txt)
 
+My Table:
+    | Before | After
+--- |   ---  | --- 
+1 | 330 | 110
+--- |   ---  | --- 
+2 | 230 | 90
+--- |   ---  | --- 
+3 | 455 | 3
+--- |   ---  | --- 
+4 | 611 | 300
+
