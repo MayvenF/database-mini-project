@@ -58,3 +58,46 @@ GROUP BY
     reader.librarycard, reader.readername;
 
 --Time for all 4 queries run together: 90 msec
+
+-----------------------------------------------------------------
+
+ --Implementing INSERT, UPDATE, DELETE Statements for Each View
+
+-- INSERT into books_authors_publishers (view 1)
+INSERT INTO book (bookid, title, genre, condition) VALUES (201, 'New Book', 'Fiction', 'New'); 
+INSERT INTO writtenBy (bookid, authorid) VALUES (201, 1);
+
+--Query returned successfully in 117 msec.
+
+
+-- UPDATE books_authors_publishers
+UPDATE book SET title = 'Updated Book' WHERE bookid = 201;
+--Query returned successfully in 107 msec.
+
+-- DELETE from books_authors_publishers
+DELETE FROM book WHERE bookid = 201;
+
+-- INSERT into reservations_books_readers (view 2)
+INSERT INTO reservation (reservationid, bookid, librarycard, loandate, returndate) VALUES (-1, 99, 1, '2024-08-01', '2024-08-15');
+
+--ERROR:  Key (librarycard)=(1) is not present in table "reader".insert or update on table "reservation" violates foreign key constraint "reservation_librarycard_fkey" 
+
+-- DELETE from reservations_books_readers
+DELETE FROM reservation WHERE reservationid = 301;
+
+--Query returned successfully in 149 msec.
+
+
+-- INSERT into books_on_shelves (view 3)
+
+INSERT INTO location (bookid, shelf_id) VALUES (99, 24);
+--ERROR:  Key (bookid)=(99) already exists.duplicate key value violates unique constraint "unique_book_id" 
+
+-- UPDATE books_on_shelves
+UPDATE location SET shelfid = 35 WHERE bookid = 1;
+--Query returned successfully in 105 msec.
+
+-- DELETE from readers_reservation_count
+DELETE FROM reader WHERE librarycard = 3;
+--Query returned successfully in 90 msec.
+
