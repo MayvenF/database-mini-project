@@ -72,4 +72,5 @@ SELECT * FROM get_readers_reservation_count();
 SELECT genre, COUNT(bookid) AS number_of_books
 FROM get_books_with_authors()
 GROUP BY genre;
-------------------------------------------
+
+--time to execute all 5 queries: 473 msec
