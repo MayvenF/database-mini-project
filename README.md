@@ -223,4 +223,4 @@ librarycard: INT
 readername: VARCHAR
 total_reservations: BIGINT
 Usage
-These functions are designed to be used in place of complex queries for ease of use and improved readability. See the Queries.sql file for examples of their usage.
+These functions are designed to be used in place of complex queries for ease of use and improved readability. See the [Queries.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage3/Queries.sql) file for examples of their usage.
