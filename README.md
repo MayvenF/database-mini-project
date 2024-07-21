@@ -88,6 +88,7 @@ Here are the timing comparisons (in msec) before and after the indices were run:
 This query retrieves all books along with their corresponding authors and publishers.
  It joins the book, writtenBy, author, publishedBy, publisher tables.
 
+```
 SELECT 
     book.title AS book_title,
     author.name AS author_name,
@@ -102,7 +103,7 @@ JOIN
     publishedBy ON book.bookid = publishedBy.bookid
 JOIN 
     publisher ON publishedBy.publisherid = publisher.publisherid;
-
+```
 Time to execute: 1 second 202 msec
 
 
@@ -110,7 +111,7 @@ Time to execute: 1 second 202 msec
 
 This query retrieves all reservations along with the names of the readers who made the reservations and the titles of the books reserved.
 It joins the reservation, reader, and book tables.
-
+```
 SELECT 
     reader.readername AS reader_name,
     book.title AS book_title,
@@ -121,13 +122,13 @@ JOIN
     reader ON reservation.librarycard = reader.librarycard
 JOIN 
     book ON reservation.bookid = book.bookid;
-
+```
 Time to execute: 246 msec
 
 3)
 This query updates the due date for all books reserved by a specific reader, identified by their readername.
  It joins the reservation table with the reader and book tables to ensure the correct books are updated.
-
+```
 UPDATE 
     reservation
 SET 
@@ -141,7 +142,7 @@ JOIN
 WHERE 
     reservation.reservationid = r.reservationid
     AND reader.readername = 'Lorraine Williams';  -- Replace with the specific reader's name
-
+```
 Time to execute: 114 msec
 
 Views and Queries:
@@ -151,21 +152,29 @@ Views can be found in [Views.sql](https://github.com/MayvenF/database-mini-proje
 Select Queries for each view:
 
 -- Select query for View 1
+```
 SELECT * FROM books_authors_publishers;
+```
 Time: 1 sec 128 msec
 
 
 -- Select query for View 2
+```
 SELECT * FROM reservations_books_readers;
+```
 Time: 324 msec
 
 
 -- Select query for View 3
+```
 SELECT * FROM books_on_shelves;
+```
 Time: 590 msec
 
 -- Select query for View 4
+```
 SELECT * FROM readers_reservation_count;
+```
 Time:152 msec
 
 Sample of select output:
@@ -176,6 +185,8 @@ Regarding the UPDATE, SELECT, DELETE for the views, see [Views.sql](https://gith
 --------------------------------------------------------------
 Visualizations
 -------------------------------------------------------------
+The first graph depicts all of the readers (by reader name) and how many reservations they have. The height of the bars on the var graph reperesent the number of visualizations.
+The second graph (the pie chart) depicts the number of books per genre. Each slice of the pie represents a genre.
 
 [visualization.pdf](https://github.com/user-attachments/files/16272874/visualization.pdf)
 
@@ -187,40 +198,37 @@ Functions
 Description: This function retrieves all books with their associated authors.
 
 Returns: A table with the following columns:
-
 bookid: INT
 title: VARCHAR
 genre: VARCHAR
 condition: VARCHAR
 author_name: VARCHAR
+
 2. get_reservations_books_readers()
 Description: This function retrieves all reservations along with the corresponding book titles and reader names.
-
 Returns: A table with the following columns:
-
 reservationid: INT
 book_title: VARCHAR
 reader_name: VARCHAR
 due_date: DATE
 returndate: DATE
+
 3. get_books_on_shelves()
 Description: This function retrieves all books along with their shelf locations.
-
 Returns: A table with the following columns:
-
 bookid: INT
 title: VARCHAR
 genre: VARCHAR
 condition: VARCHAR
 shelf_id: VARCHAR
 location: VARCHAR
+
 4. get_readers_reservation_count()
 Description: This function retrieves all readers along with their total number of reservations.
-
 Returns: A table with the following columns:
-
 librarycard: INT
 readername: VARCHAR
 total_reservations: BIGINT
+
 Usage
 These functions are designed to be used in place of complex queries for ease of use and improved readability. See the [Queries.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage3/Queries.sql) file for examples of their usage.
