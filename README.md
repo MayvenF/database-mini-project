@@ -197,38 +197,19 @@ Functions
 1. get_books_with_authors()
 Description: This function retrieves all books with their associated authors.
 
-Returns: A table with the following columns:
-bookid: INT
-title: VARCHAR
-genre: VARCHAR
-condition: VARCHAR
-author_name: VARCHAR
+Returns: A table with the following columns: bookid (INT), title (VARCHAR), genre (VARCHAR), condition (VARCHAR), author_name (VARCHAR)
 
 2. get_reservations_books_readers()
 Description: This function retrieves all reservations along with the corresponding book titles and reader names.
-Returns: A table with the following columns:
-reservationid: INT
-book_title: VARCHAR
-reader_name: VARCHAR
-due_date: DATE
-returndate: DATE
+Returns: A table with the following columns:reservationid (INT), book_title (VARCHAR), reader_name (VARCHAR), due_date (DATE), returndate (DATE)
 
 3. get_books_on_shelves()
 Description: This function retrieves all books along with their shelf locations.
-Returns: A table with the following columns:
-bookid: INT
-title: VARCHAR
-genre: VARCHAR
-condition: VARCHAR
-shelf_id: VARCHAR
-location: VARCHAR
+Returns: A table with the following columns: bookid (INT), title (VARCHAR),  genre (VARCHAR), condition (VARCHAR), shelf_id (VARCHAR), location (VARCHAR)
 
 4. get_readers_reservation_count()
 Description: This function retrieves all readers along with their total number of reservations.
-Returns: A table with the following columns:
-librarycard: INT
-readername: VARCHAR
-total_reservations: BIGINT
+Returns: A table with the following columns: librarycard (INT), readername (VARCHAR), total_reservations (BIGINT)
 
 Usage
 These functions are designed to be used in place of complex queries for ease of use and improved readability. See the [Queries.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage3/Queries.sql) file for examples of their usage.
