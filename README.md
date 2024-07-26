@@ -234,5 +234,6 @@ The notable changes in the merged ERD is the deletion of our Author and WrittenB
 The updated merged DSD:
 ![image](https://github.com/user-attachments/assets/06746243-0499-474a-bc85-9ef6d1cb6f94)
 
-The SQL Create Table script can be found in this file: DSDMergeCreateTable
+The SQL Create Table script can be found in this file: [DSDMergeSQLScript](Stage4/DSDMergeSQLScript.sql)
+
 
