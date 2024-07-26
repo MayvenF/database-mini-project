@@ -213,3 +213,26 @@ Returns: A table with the following columns: librarycard (INT), readername (VARC
 
 Usage
 These functions are designed to be used in place of complex queries for ease of use and improved readability. See the [Queries.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage3/Queries.sql) file for examples of their usage.
+
+
+--------------------------------------------------------------
+Stage 4 - Merging our Book Database with a Reader Database
+-------------------------------------------------------------
+
+Our old ERD:
+![image (2)](https://github.com/MayvenF/database-mini-project-3058-6034/assets/117817449/640cb3b8-ee99-4f28-898a-7b52e8997731)
+
+Their ERD:
+![image](https://github.com/user-attachments/assets/d5420287-f280-4796-8704-e946f11d1a05)
+
+The merged ERD:
+![image (6)](https://github.com/user-attachments/assets/00f5cee6-af9f-4a8e-96b4-29564825821d)
+
+
+The notable changes in the merged ERD is the deletion of our Author and WrittenBy entities/relationships and the deletion of our reservation relation. In the foreign database, they included author and title as attributes of book, while we had them in separate tables. Since presumably their data was accurate, we felt comfortable deleting our extra tables in favor of theirs. Additionally, their Loan table was exactly the same as our Reservation table, with the only difference being the column names, so we opted to alias theirs instead of ours. Their book database had different columns then ours, but presumably had the same books since our databases refer to the same library, so we merged those together based on book id.
+
+The updated merged DSD:
+![image](https://github.com/user-attachments/assets/06746243-0499-474a-bc85-9ef6d1cb6f94)
+
+The SQL Create Table script can be found in this file: DSDMergeCreateTable
+
