@@ -219,13 +219,13 @@ These functions are designed to be used in place of complex queries for ease of 
 Stage 4 - Merging our Book Database with a Reader Database
 -------------------------------------------------------------
 
-Our old ERD:
+Our old ERD [JSON File Here](Stage4/BookERD.erdplus)
 ![image (2)](https://github.com/MayvenF/database-mini-project-3058-6034/assets/117817449/640cb3b8-ee99-4f28-898a-7b52e8997731)
 
-Their ERD:
+Their ERD [JSON File Here](Stage4/ReaderERD.erdplus)
 ![image](https://github.com/user-attachments/assets/d5420287-f280-4796-8704-e946f11d1a05)
 
-The merged ERD:
+The merged ERD [JSON File Here](Stage4/BookReaderMerge.erdplus)
 ![image (6)](https://github.com/user-attachments/assets/00f5cee6-af9f-4a8e-96b4-29564825821d)
 
 
