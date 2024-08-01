@@ -236,4 +236,19 @@ The updated merged DSD:
 
 The SQL Create Table script can be found in this file: [DSDMergeSQLScript](Stage4/DSDMergeSQLScript.sql)
 
+We created two different views using dblink to connect the two databases. 
+See the views in the file [Views.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage4/Views.sql)
+
+We then created several queries of type SELECT, INSERT, and UPDATE using these two views. 
+See the queries in the file [ViewQueries.sql](https://github.com/MayvenF/database-mini-project-3058-6034/blob/main/Stage4/ViewQueries.sql)
+
+Here are some sample outputs of the queries after running them:
+
+![dbImage1](https://github.com/user-attachments/assets/45e01f3d-657b-441d-97d4-91cbb06a405d)
+
+![dbImage2](https://github.com/user-attachments/assets/f3c4c687-8a24-406d-a555-ed3ae53fa5a0)
+
+![dbImage3](https://github.com/user-attachments/assets/bb4d0d7b-2682-4a81-ad96-7429c7fed584)
+
+
 
